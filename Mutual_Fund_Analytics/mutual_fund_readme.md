@@ -1,13 +1,13 @@
-# 📊 Mutual Fund Analytics Project (Capstone)
+#  Mutual Fund Analytics Project (Capstone)
 
-## 📌 Overview
+##  Overview
 This project is a data engineering and analytics pipeline built to analyze mutual fund performance, NAV trends, investor transactions, and AUM distribution using real-world financial datasets.
 
 The project follows a structured ETL → Cleaning → Database → SQL Analytics workflow.
 
 ---
 
-# 🛠️ Tech Stack
+#  Tech Stack
 - Python (Pandas, NumPy)
 - SQL (SQLite)
 - SQLAlchemy
@@ -17,7 +17,7 @@ The project follows a structured ETL → Cleaning → Database → SQL Analytics
 
 ---
 
-# 📁 Project Structure
+#  Project Structure
 
 project/
 │
@@ -34,11 +34,11 @@ project/
 
 ---
 
-# 🚀 Day 1 — Data Ingestion & Setup
+#  Day 1 — Data Ingestion & Setup
 
-## ⏱️ Time Estimate: 6–8 Hours
+##  Time Estimate: 6–8 Hours
 
-## 🎯 Tasks Completed
+##  Tasks Completed
 
 1. Project setup and Git initialization  
 2. Installed dependencies and created requirements.txt  
@@ -48,18 +48,18 @@ project/
 6. Explored fund master dataset  
 7. Validated AMFI codes  
 
-## 📌 Outputs
+##  Outputs
 - data_ingestion.py  
 - live_nav_fetch.py  
 - requirements.txt  
 
 ---
 
-# 🧹 Day 2 — Data Cleaning & Database Design
+#  Day 2 — Data Cleaning & Database Design
 
-## ⏱️ Time Estimate: 7–8 Hours
+##  Time Estimate: 7–8 Hours
 
-## 🎯 Tasks Completed
+##  Tasks Completed
 
 1. Cleaned nav_history.csv  
 2. Cleaned investor_transactions.csv  
@@ -69,7 +69,7 @@ project/
 6. Wrote 10 analytical SQL queries  
 7. Created data dictionary  
 
-## 📌 Outputs
+##  Outputs
 - bluestock_mf.db  
 - schema.sql  
 - queries.sql  
@@ -77,7 +77,7 @@ project/
 
 ---
 
-# 📊 Project Outcome
+#  Project Outcome
 
 - End-to-end ETL pipeline  
 - SQL analytics on financial data  
