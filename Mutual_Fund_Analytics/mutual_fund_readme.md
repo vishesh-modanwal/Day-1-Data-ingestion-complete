@@ -86,7 +86,7 @@ project/
 
 ---
 
-# 🚀 Future Improvements
+#  Future Improvements
 
 - Build Streamlit dashboard  
 - Add NAV prediction model  
