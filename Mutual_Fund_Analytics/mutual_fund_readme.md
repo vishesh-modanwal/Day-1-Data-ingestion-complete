@@ -1,93 +1,309 @@
-#  Mutual Fund Analytics Project (Capstone)
+#  Mutual Fund Analytics Capstone Project
 
-## 📌 Overview
-This project is a data engineering and analytics pipeline built to analyze mutual fund performance, NAV trends, investor transactions, and AUM distribution using real-world financial datasets.
-
-The project follows a structured ETL → Cleaning → Database → SQL Analytics workflow.
+A complete end-to-end Mutual Fund Analytics project built using **Python, SQLite, Pandas, Plotly, Seaborn, and Jupyter Notebook**. This project demonstrates the entire data analytics workflow—from raw data ingestion and database design to exploratory data analysis and advanced financial performance analytics.
 
 ---
 
-#  Tech Stack
-- Python (Pandas, NumPy)
-- SQL (SQLite)
-- SQLAlchemy
-- Matplotlib, Seaborn, Plotly
-- Requests (API integration)
-- Jupyter Notebook
+##  Project Overview
+
+The goal of this project is to analyze historical mutual fund data and generate meaningful insights that can help investors evaluate fund performance. The project covers data preprocessing, SQL database creation, exploratory data analysis (EDA), financial performance metrics, and benchmark comparison.
+
+---
+
+##  Objectives
+
+- Build a structured mutual fund database using SQLite.
+- Perform data cleaning and preprocessing.
+- Conduct Exploratory Data Analysis (EDA).
+- Analyze fund performance using financial metrics.
+- Compare mutual funds with benchmark indices.
+- Generate professional visualizations and reports.
+
+---
+
+#  Technology Stack
+
+| Category | Tools |
+|----------|-------|
+| Programming Language | Python |
+| Database | SQLite |
+| IDE | Jupyter Notebook |
+| Data Processing | Pandas, NumPy |
+| Visualization | Matplotlib, Seaborn, Plotly |
+| Statistical Analysis | SciPy |
+| Version Control | Git & GitHub |
 
 ---
 
 #  Project Structure
 
-project/
+```text
+Mutual_Fund_Analytics/
 │
 ├── data/
 │   ├── raw/
-│   ├── processed/
+│   └── processed/
+│
+├── database/
+│   ├── schema.sql
+│   └── mutual_fund.db
 │
 ├── notebooks/
-├── sql/
-├── dashboard/
+│   ├── Data_Ingestion.ipynb
+│   ├── EDA_Analysis.ipynb
+│   └── Performance_Analytics.ipynb
+│
+├── charts/
+│
 ├── reports/
-├── database/
-└── requirements.txt
+│   ├── Documentation.docx
+│   ├── Final_Report.docx
+│   └── Presentation.pptx
+│
+├── requirements.txt
+│
+└── README.md
+```
 
 ---
 
-#  Day 1 — Data Ingestion & Setup
+#  Project Progress
 
-##  Time Estimate: 6–8 Hours
+##  Day 1 – Data Ingestion
 
-##  Tasks Completed
+Completed:
 
-1. Project setup and Git initialization  
-2. Installed dependencies and created requirements.txt  
-3. Loaded 10 CSV datasets using Pandas  
-4. Fetched live NAV data from mfapi.in API  
-5. Retrieved NAV for 5 major schemes  
-6. Explored fund master dataset  
-7. Validated AMFI codes  
+- Imported all raw CSV datasets.
+- Designed SQLite database schema.
+- Created dimension and fact tables.
+- Loaded cleaned datasets into SQLite.
+- Verified database integrity.
 
-##  Outputs
-- data_ingestion.py  
-- live_nav_fetch.py  
-- requirements.txt  
+### Deliverables
 
----
-
-#  Day 2 — Data Cleaning & Database Design
-
-## ⏱ Time Estimate: 7–8 Hours
-
-##  Tasks Completed
-
-1. Cleaned nav_history.csv  
-2. Cleaned investor_transactions.csv  
-3. Cleaned scheme_performance.csv  
-4. Designed SQLite star schema  
-5. Loaded data into SQLite using SQLAlchemy  
-6. Wrote 10 analytical SQL queries  
-7. Created data dictionary  
-
-##  Outputs
-- bluestock_mf.db  
-- schema.sql  
-- queries.sql  
-- data_dictionary.md  
+- SQLite Database
+- schema.sql
+- Data_Ingestion.ipynb
 
 ---
 
-#  Project Outcome
+## Day 2 – Data Processing
 
-- End-to-end ETL pipeline  
-- SQL analytics on financial data  
-- Data cleaning and validation  
-- API-based data ingestion  
+Completed:
+
+- Data validation
+- Missing value handling
+- Data type conversion
+- Duplicate removal
+- Feature engineering
+- Data export
+
+### Deliverables
+
+- Cleaned datasets
+- Processed CSV files
 
 ---
 
-#  Future Improvements
+##  Day 3 – Exploratory Data Analysis (EDA)
 
-- Build Streamlit dashboard  
-- Add NAV prediction model  
-- Deploy as portfolio project
+Completed:
+
+### NAV Analysis
+
+- Daily NAV trend
+- NAV distribution
+- Monthly average NAV
+- Return distribution
+
+### AUM Analysis
+
+- Fund House comparison
+- Year-wise AUM growth
+
+### SIP Analysis
+
+- Monthly SIP trend
+- SIP inflow visualization
+
+### Category Analysis
+
+- Category inflow heatmap
+
+### Investor Analysis
+
+- Age group distribution
+- Gender distribution
+- SIP amount analysis
+
+### Geographic Analysis
+
+- State-wise investment
+- T30 vs B30 comparison
+
+### Folio Analysis
+
+- Folio growth trend
+
+### Portfolio Analysis
+
+- Sector allocation
+- NAV correlation matrix
+
+### Deliverables
+
+- EDA_Analysis.ipynb
+- 15+ Visualizations
+- PNG Charts
+
+---
+
+#  Day 4 – Performance Analytics
+
+Day 4 focused on evaluating mutual fund performance using widely accepted financial metrics and comparing funds against benchmark indices.
+
+###  Daily Return Analysis
+
+- Computed daily returns for all mutual fund schemes.
+- Analyzed return distribution.
+- Generated return-based visualizations.
+
+###  CAGR Analysis
+
+Calculated:
+
+- 1-Year CAGR
+- 3-Year CAGR
+- 5-Year CAGR
+
+Compared annualized growth across all funds.
+
+### Sharpe Ratio
+
+- Used 6.5% risk-free rate.
+- Ranked funds based on risk-adjusted return.
+
+###  Sortino Ratio
+
+- Measured downside-risk-adjusted performance.
+- Compared funds using downside deviation.
+
+###  Alpha & Beta
+
+Performed regression against **NIFTY100** to calculate:
+
+- Alpha
+- Beta
+- R² Score
+
+###  Maximum Drawdown
+
+Calculated:
+
+- Worst historical drawdown
+- Drawdown date
+- Downside risk comparison
+
+###  Fund Scorecard
+
+Created a weighted scoring model based on:
+
+- 30% CAGR
+- 25% Sharpe Ratio
+- 20% Alpha
+- 15% Expense Ratio
+- 10% Maximum Drawdown
+
+Generated an overall score (0–100) and ranked all mutual funds.
+
+###  Benchmark Comparison
+
+Compared the top-performing funds against:
+
+- NIFTY50
+- NIFTY100
+
+Calculated Tracking Error and generated interactive comparison charts.
+
+### Deliverables
+
+- Performance_Analytics.ipynb
+- fund_scorecard.csv
+- alpha_beta.csv
+- benchmark_comparison.csv
+- 10+ Performance Charts
+
+---
+
+#  Financial Metrics Implemented
+
+- Daily Return
+- CAGR (1Y, 3Y, 5Y)
+- Sharpe Ratio
+- Sortino Ratio
+- Alpha
+- Beta
+- Maximum Drawdown
+- Tracking Error
+- Composite Fund Score
+
+---
+
+#  Visualizations
+
+The project contains more than **30 professional charts**, including:
+
+- NAV Trends
+- Return Distribution
+- CAGR Comparison
+- AUM Growth
+- SIP Trends
+- Category Heatmaps
+- Investor Demographics
+- Geographic Distribution
+- Sector Allocation
+- Correlation Matrix
+- Sharpe Ratio Ranking
+- Sortino Ratio Ranking
+- Alpha Analysis
+- Maximum Drawdown
+- Fund Scorecard
+- Benchmark Comparison
+
+---
+
+#  Outputs
+
+Generated CSV files:
+
+- daily_returns.csv
+- cagr_comparison.csv
+- sharpe_ratio.csv
+- sortino_ratio.csv
+- alpha_beta.csv
+- maximum_drawdown.csv
+- fund_scorecard.csv
+- benchmark_comparison.csv
+
+---
+
+#  Key Insights
+
+- Risk-adjusted metrics provide a better measure of fund quality than returns alone.
+- Positive Alpha indicates a fund outperformed its benchmark.
+- Lower Maximum Drawdown reflects stronger downside protection.
+- Sharpe and Sortino Ratios help compare funds after accounting for risk.
+- Composite scoring simplifies the identification of high-quality funds.
+- Benchmark comparison highlights actively managed funds with consistent performance.
+
+---
+
+# 🚀 Future Improvements
+
+- Build an interactive dashboard using Streamlit or Power BI.
+- Add machine learning models to predict NAV trends.
+- Integrate live AMFI and NSE APIs.
+- Automate daily data updates.
+- Deploy the project on the cloud.
+
+ 
