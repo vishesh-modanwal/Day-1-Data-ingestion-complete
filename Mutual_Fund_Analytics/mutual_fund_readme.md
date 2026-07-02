@@ -297,8 +297,377 @@ Generated CSV files:
 - Benchmark comparison highlights actively managed funds with consistent performance.
 
 ---
+#  Day 5 – Interactive Dashboard Development (Power BI)
 
-# 🚀 Future Improvements
+## Overview
+
+The fifth phase of the project focused on transforming the processed mutual fund datasets into an interactive business intelligence dashboard using **Microsoft Power BI**. The objective was to build a professional dashboard that enables users to explore industry trends, fund performance, investor behaviour, and SIP market movements through interactive visualizations.
+
+---
+
+## Objectives
+
+- Connect Power BI with all processed datasets.
+- Build relationships between datasets using `amfi_code` and `date`.
+- Design four interactive dashboard pages.
+- Implement filters, slicers, and drill-down capabilities.
+- Export the dashboard in multiple formats.
+
+---
+
+## Dashboard Pages
+
+###  Page 1 – Industry Overview
+
+**Visuals Included**
+
+- KPI Cards
+  - Total Industry AUM
+  - SIP Inflows
+  - Total Folios
+  - Total Mutual Fund Schemes
+- Industry AUM Trend (2022–2025)
+- AUM by Fund House
+
+---
+
+###  Page 2 – Fund Performance
+
+**Visuals Included**
+
+- Return vs Risk Scatter Plot
+- NAV vs Benchmark Line Chart
+- Fund Scorecard Table
+- Interactive Slicers
+  - Fund House
+  - Category
+  - Plan
+
+---
+
+###  Page 3 – Investor Analytics
+
+**Visuals Included**
+
+- Transaction Amount by State
+- SIP / Lumpsum / Redemption Distribution
+- Average SIP Amount by Age Group
+- Monthly Transaction Trend
+
+**Filters**
+
+- State
+- Age Group
+- City Tier
+
+---
+
+###  Page 4 – SIP & Market Trends
+
+**Visuals Included**
+
+- SIP Inflow vs NIFTY 50
+- Category-wise Inflow Heatmap
+- Top Categories by Net Inflow
+
+---
+
+## Power BI Features Used
+
+- Data Modelling
+- Relationships
+- KPI Cards
+- Bar Charts
+- Line Charts
+- Scatter Plot
+- Donut Chart
+- Heatmap
+- Slicers
+- Tooltips
+- Custom Theme
+
+---
+
+## Deliverables
+
+```
+bluestock_mf_dashboard.pbix
+Dashboard.pdf
+Industry_Overview.png
+Fund_Performance.png
+Investor_Analytics.png
+SIP_Market_Trends.png
+```
+
+---
+
+# 📅 Day 6 – Advanced Analytics & Risk Metrics
+
+## Overview
+
+Day 6 focused on advanced financial analytics using Python. Multiple risk metrics, investor behaviour analyses, portfolio concentration measures, and a rule-based recommendation system were developed to provide deeper insights into mutual fund performance and investor activity.
+
+---
+
+## Objectives
+
+- Measure downside risk using VaR and CVaR.
+- Evaluate rolling risk-adjusted returns.
+- Analyze investor cohorts.
+- Measure SIP continuity.
+- Build a fund recommendation system.
+- Evaluate portfolio diversification using HHI.
+
+---
+
+# Task 1 – Historical VaR & CVaR
+
+Historical Value at Risk (VaR) and Conditional Value at Risk (CVaR) were calculated using daily NAV returns.
+
+### Formula
+
+```
+VaR (95%) = 5th Percentile of Daily Returns
+
+CVaR = Average Return Below VaR
+```
+
+### Deliverable
+
+```
+var_cvar_report.csv
+```
+
+---
+
+# Task 2 – Rolling 90-Day Sharpe Ratio
+
+A rolling 90-day Sharpe Ratio was calculated for selected mutual funds.
+
+### Formula
+
+```
+Sharpe Ratio
+
+=
+
+Rolling Mean Return
+--------------------
+Rolling Standard Deviation
+
+× √252
+```
+
+### Visualization
+
+Rolling Sharpe Ratio Trend
+
+### Deliverable
+
+```
+rolling_sharpe_chart.png
+```
+
+---
+
+# Task 3 – Investor Cohort Analysis
+
+Investors were grouped based on their first investment year.
+
+Metrics calculated
+
+- Average SIP Amount
+- Total Investment
+- Most Preferred Fund
+
+### Deliverable
+
+```
+cohort_analysis.csv
+```
+
+---
+
+# Task 4 – SIP Continuity Analysis
+
+Investors with six or more SIP transactions were analysed.
+
+Average gap between consecutive SIPs was calculated.
+
+Investors with an average gap greater than **35 days** were marked as **At Risk**.
+
+### Deliverables
+
+```
+sip_continuity_report.csv
+sip_continuity_analysis.png
+```
+
+---
+
+# Task 5 – Mutual Fund Recommendation System
+
+A standalone Python application was developed to recommend mutual funds based on investor risk appetite.
+
+### Inputs
+
+- Low Risk
+- Moderate Risk
+- High Risk
+
+### Recommendation Logic
+
+- Filter by Risk Grade
+- Rank by Sharpe Ratio
+- Recommend Top 3 Funds
+
+### Deliverable
+
+```
+scripts/recommender.py
+```
+
+---
+
+# Task 6 – Sector HHI Concentration
+
+Portfolio diversification was measured using the Herfindahl-Hirschman Index (HHI).
+
+### Formula
+
+```
+HHI = Σ(weight²)
+```
+
+Lower HHI
+
+→ Better Diversification
+
+Higher HHI
+
+→ Higher Portfolio Concentration
+
+### Deliverables
+
+```
+hhi_report.csv
+sector_hhi_chart.png
+```
+
+---
+
+# Task 7 – Business Insights
+
+Five business insights were derived from the analyses:
+
+- Downside Risk Analysis using VaR & CVaR
+- Risk-adjusted Performance using Sharpe Ratio
+- Investor Cohort Behaviour
+- SIP Continuity Trends
+- Portfolio Diversification using HHI
+
+---
+
+# Technologies Used
+
+- Python
+- Pandas
+- NumPy
+- Plotly
+- Matplotlib
+- SQLite
+- Power BI
+- Jupyter Notebook
+
+---
+
+# Project Folder Structure
+
+```
+Mutual_Fund_Analytics
+│
+├── data
+│   ├── raw
+│   └── processed
+│
+├── notebooks
+│   ├── EDA.ipynb
+│   ├── Financial_Analytics.ipynb
+│   └── Advanced_Analytics.ipynb
+│
+├── scripts
+│   └── recommender.py
+│
+├── reports
+│   ├── figures
+│   └── outputs
+│
+├── dashboard
+│   └── bluestock_mf_dashboard.pbix
+│
+├── README.md
+└── requirements.txt
+```
+
+---
+
+# Final Deliverables
+
+## Day 5
+
+- Power BI Dashboard (.pbix)
+- Dashboard PDF
+- Four Dashboard Screenshots
+
+## Day 6
+
+- Advanced_Analytics.ipynb
+- recommender.py
+- var_cvar_report.csv
+- cohort_analysis.csv
+- sip_continuity_report.csv
+- hhi_report.csv
+- rolling_sharpe_chart.png
+- sip_continuity_analysis.png
+- sector_hhi_chart.png
+
+---
+
+# Key Learning Outcomes
+
+Throughout this project, I gained practical experience in:
+
+- Data Cleaning & ETL
+- SQL Database Design
+- Financial Risk Analytics
+- Mutual Fund Performance Analysis
+- Investor Behaviour Analytics
+- Portfolio Diversification Metrics
+- Business Intelligence using Power BI
+- Building Interactive Dashboards
+- Developing Rule-Based Recommendation Systems
+- End-to-End Data Analytics Project Development
+
+---
+
+## Project Status
+
+✅ Day 1 – Data Collection & Database Design
+
+✅ Day 2 – ETL Pipeline & SQL
+
+✅ Day 3 – Exploratory Data Analysis
+
+✅ Day 4 – Financial Analytics
+
+✅ Day 5 – Power BI Dashboard
+
+✅ Day 6 – Advanced Analytics & Risk Metrics
+
+ **Project Completed Successfully**
+
+
+#  Future Improvements
 
 - Build an interactive dashboard using Streamlit or Power BI.
 - Add machine learning models to predict NAV trends.
